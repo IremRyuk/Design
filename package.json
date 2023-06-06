@@ -20,6 +20,7 @@
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
     "redux": "^4.2.1",
+    "speed-test": "^3.0.0",
     "swiper": "^9.3.2"
   },
   "devDependencies": {
