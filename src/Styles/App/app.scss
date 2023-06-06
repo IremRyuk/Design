@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+$Bgcolor:#3a3a3a;
+$FontColor:#00ffad;
+.App{
+    width: 100vw;
+    height: auto;
+    background-image: url('../../Images/background.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $FontColor;
+    cursor:default;
+    &:active{
+        cursor:grabbing;
+    }
+}

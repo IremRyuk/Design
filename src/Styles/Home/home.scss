@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.home{
+    margin-top: 100px;
+}
+
+.title1{
+    transition: 0.7s;
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    animation: titleAnimation 0.9s linear;
+    &:hover{
+        right: 11%;
+    }
+}
+.title2{
+    transition: 0.7s;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    animation: titleAnimation 0.7s linear;
+    &:hover{
+        right: 31%;
+    }
+}
+.title3{
+    transition: 0.7s;
+    cursor: pointer;
+    position: absolute;
+    top:100%;
+    right: 5%;
+    animation: titleAnimation 0.5s linear;
+    &:hover{
+        right: 6%;
+    }
+}
+@keyframes titleAnimation {
+    0%{
+right: 0%;
+visibility: hidden;
+    }
+    100%{
+visibility:visible;
+    }
+}

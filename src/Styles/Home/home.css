@@ -1,0 +1,68 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.home {
+  margin-top: 100px;
+}
+
+.title1 {
+  transition: 0.7s;
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  right: 10%;
+  -webkit-animation: titleAnimation 0.9s linear;
+          animation: titleAnimation 0.9s linear;
+}
+.title1:hover {
+  right: 11%;
+}
+
+.title2 {
+  transition: 0.7s;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  -webkit-animation: titleAnimation 0.7s linear;
+          animation: titleAnimation 0.7s linear;
+}
+.title2:hover {
+  right: 31%;
+}
+
+.title3 {
+  transition: 0.7s;
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  -webkit-animation: titleAnimation 0.5s linear;
+          animation: titleAnimation 0.5s linear;
+}
+.title3:hover {
+  right: 6%;
+}
+
+@-webkit-keyframes titleAnimation {
+  0% {
+    right: 0%;
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    right: 0%;
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}/*# sourceMappingURL=home.css.map */
