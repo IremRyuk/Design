@@ -65,3 +65,11 @@ export const ConvertTitle = {
     md:'xx-large'
 }
 }
+// Canvas
+export const CanvasMainBox = {
+  width:'100vw',
+  height:'100vh',
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center'
+}

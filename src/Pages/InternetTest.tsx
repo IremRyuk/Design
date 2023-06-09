@@ -3,7 +3,7 @@ import { Box, Typography,Stack,Button } from "@mui/material";
 
 export default function InternetTest() {
   const imageAddr =
-  "http://wallpaperswide.com/download/shadow_of_the_tomb_raider_2018_puzzle_video_game-wallpaper-7680x4800.jpg" +
+  `https://wallpaperaccess.com/full/5244392.jpg` +
   "?n=" +
   Math.random();
 let startTime: number, endTime: number;
