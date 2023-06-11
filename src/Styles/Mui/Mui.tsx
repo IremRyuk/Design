@@ -69,7 +69,44 @@ export const ConvertTitle = {
 export const CanvasMainBox = {
   width:'100vw',
   height:'100vh',
-  display:'flex',
+  display:{xs:'none',md:'flex'},
   justifyContent:'center',
   alignItems:'center'
+}
+export const PaintBtns = {
+  minWidth:{sm:'100px',md:'150px',lg:'200px'},
+  boxShadow:'0px 0px 10px #00ffad'
+}
+export const PaintFunctions = {
+  width:'70%',
+padding:'10px 20px'
+}
+// Canvas Paint 600<
+export const CanvasMini = {
+  width:'100vw',
+  height:'100vh',
+  display:'flex',
+  flexDirection:'column',
+  justifyContent:'center',
+  alignItems:'center'
+}
+export const PaintFunctionsMini = {
+  marginTop:'10px',
+  width:'80%',
+  padding:'10px 20px'
+  }
+export const PaintBtnsDrawerMini = {
+  minWidth:'100px',
+  background:'#3a3a3a',
+  color:'#00ffad',
+  '&:hover':{
+    background:'#3a3a3a'
+  },
+  boxShadow:'0px 0px 5px #00ffad',
+  borderRadius:'2mm'
+}
+// SaveData
+export const SaveDataInput = {
+  width:'50%',
+  border:'2px solid #00ffad',
 }
