@@ -11,6 +11,7 @@ import {useState,useEffect} from 'react'
 import Home from './Pages/Home';
 import Converting from './Pages/Converting';
 import InternetTest from './Pages/InternetTest';
+import Paint from './Pages/Paint';
 
 export default function App() {
   // Redux
@@ -34,9 +35,12 @@ useEffect(()=>{
       onSwiper={setSwiper}
       spaceBetween={0}
       slidesPerView={1}
+      allowTouchMove={true}
+
       >
         <SwiperSlide><InternetTest /></SwiperSlide>
-        <SwiperSlide><Home /></SwiperSlide>
+        <SwiperSlide><Home /></SwiperSlide>        
+        <SwiperSlide><Paint /></SwiperSlide>
         <SwiperSlide><SaveData /></SwiperSlide>
         <SwiperSlide><Converting /></SwiperSlide>
       </Swiper>
