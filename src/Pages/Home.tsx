@@ -1,7 +1,8 @@
-import { Box, Modal, Stack, Typography } from "@mui/material";
+import { Box, Modal, Stack, Typography,Button } from "@mui/material";
 import '../Styles/Home/home.css'
 import {useState,useEffect} from 'react'
-import { HomeModal, HomeModalFonts, HomeTime } from "../Styles/Mui/Mui";
+import {CatergoriesBtns, HomeModal, HomeModalFonts, HomeTime} from "../Styles/Mui/Mui";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     // React State
@@ -20,25 +21,33 @@ export default function Home() {
     })
   return (
     <Box
-    width='100vw'
-    height='100vh'
     className='home'
     >
+<br />
+<br />
         <center><Typography variant="h3">Welcome to <span style={{fontWeight:'bold'}}>ToolLand</span></Typography></center>
-        {/* Titles */}
-        <Stack position='relative' direction='column' textAlign='right' width='100vw' height='200px' mt={20}>
-<Typography sx={{fontSize:{sm:'x-large',md:'xx-large'}}} className="title1">Convert Kg Into Pounds</Typography>
-<Typography sx={{fontSize:{sm:'x-large',md:'xx-large'}}} className="title2">Convert Km Into Ft</Typography>
-<Typography sx={{fontSize:{sm:'x-large',md:'xx-large'}}} className="title3">Save Your Personal Data,Edit & Delete</Typography>
-</Stack>
-{/* Time */}
-<Typography sx={HomeTime}>Your Current Time:{hours}:{minutes}</Typography>
+        {/* Categories */}
+        <Stack 
+        direction='column'
+        height='70vh'
+        justifyContent='center'
+        alignItems='center'
+        sx={{
+            position:'absolute',
+            top:'50%',
+            left:'50%',
+            transform:'translate(-50%,-50%)'
+        }}
+        className='change'
+        >
+<Link to ='/paint'><Button variant='contained' sx={CatergoriesBtns}>Paint</Button></Link>
+<Link to ='/convert'><Button variant='contained' sx={CatergoriesBtns}>Converting</Button></Link>
+<Link to ='/internetTest'><Button variant='contained' sx={CatergoriesBtns}>Internet Speed Test</Button></Link>
+<Link to ='/savedata'><Button variant='contained' sx={CatergoriesBtns}>Save Information</Button></Link>
+        </Stack>
 
-
-
-
-
-
+        {/* Time */}
+        <Typography sx={HomeTime}>Your Current Time:{hours}:{minutes}</Typography>
 
         {/* Modal On First Load Page */}
         <Modal
@@ -54,7 +63,7 @@ export default function Home() {
             <br />
             <br />
             <Typography sx={HomeModalFonts}>2) From Top Right Menu Button, You can change settings</Typography>
-        </Box>
+            </Box>
         </Modal>
     </Box>
   )

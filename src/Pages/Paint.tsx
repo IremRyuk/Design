@@ -5,6 +5,8 @@ import {createRef,useState} from 'react'
 import '../Styles/Paint/paint.css'
 import MiniPaint from "./MiniPaint";
 import { useSelector } from "react-redux";
+import Nav from "../Components/Nav";
+import MiniNav from "../Components/MiniNav";
 export default function Paint() {
   // Redux
   let screenSize = useSelector((state:any)=>state.windowWidth)
@@ -30,6 +32,7 @@ export default function Paint() {
     }
   return (
     <>
+    <Nav />
     <Box
     sx={CanvasMainBox}
     >
@@ -90,6 +93,7 @@ export default function Paint() {
     {screenSize<=900 && 
     <MiniPaint />
   }
+  <MiniNav />
     </>
   )
 }

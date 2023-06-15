@@ -10,11 +10,11 @@ export default function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<InternetTest />} />
         <Route path='/' element={<Home />} />
-        <Route path='/' element={<Paint />} />
-        <Route path='/' element={<SaveData />} />
-        <Route path='/' element={<Converting />} />
+        <Route path='/internetTest' element={<InternetTest />} />
+        <Route path='/paint' element={<Paint />} />
+        <Route path='/savedata' element={<SaveData />} />
+        <Route path='/convert' element={<Converting />} />
         </Routes>
     </div>
   );

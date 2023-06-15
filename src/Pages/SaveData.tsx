@@ -1,10 +1,13 @@
 import { Box,Stack,Button, InputAdornment } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import { SaveDataInput } from "../Styles/Mui/Mui";
+import { SaveDataBtns, SaveDataInput } from "../Styles/Mui/Mui";
 import Typography from "@mui/material/Typography";
 import {useState,useEffect} from 'react'
+import Nav from "../Components/Nav";
+import MiniNav from "../Components/MiniNav";
 
 export default function SaveData() {
+    // useState
   const [arr,setArr] = useState<{}[]>([])
   const [saveText,setSaveText] = useState<string>('')
   const [obj,setObj] = useState<{}>({})
@@ -41,7 +44,7 @@ useEffect(()=>{
     }
     else{
       // Set Data In Array
-      setArr([...arr,obj])
+      setArr([obj,...arr])
       // Clear SaveText Input Value
       setSaveText('')
     }
@@ -72,34 +75,40 @@ const Erase = () => {
   setArr([])
 }
   return (
+    <>
+    <Nav />
+    <br />
+    <br />
+    <br />
     <Box
     width='100vw'
     height='100vh'
     display='flex'
     justifyContent='center'
-    alignItems='center'
+    alignItems={{xs:'flex-start',sm:'center'}}
     sx={{backdropFilter:'blur(10px)'}}
     >
       <Box
-      width='70%'
+      width={{xs:'100%',sm:'85%',lg:'80%',xl:'70%'}}
       height='80vh'
       border='4px solid #00ffad'
       borderRadius='2.4mm'
       >
         {/* Remove, Input and Add */}
         <Stack
-        direction='row'
+        direction='column'
         width='100%'
-        height='15%'
-        justifyContent='space-evenly'
+        height='20%'
+        justifyContent='space-around'
         alignItems='center'
         p={1}
         >
-          <Button variant="contained" sx={{width:'fit-content',fontSize:'medium'}} color='error' onClick={()=>Erase()}>Clear All</Button>
           <TextField
+          autoComplete='off'
           value={saveText}
+          placeholder="type..."
           onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setSaveText(e.target.value)}
-          variant="outlined"
+          variant="standard"
           sx={SaveDataInput}
           inputProps={{
             style:{
@@ -111,14 +120,17 @@ color:'white'
             )
           }}
           />
-          <Button variant="contained" sx={{width:'fit-content',fontSize:'medium'}} onClick={()=>Add()} disabled={btn}>Add</Button>
-          <Button variant="contained" sx={{width:'fit-content',fontSize:'medium'}} onClick={()=>ShowSavedValues()}>Show All</Button>
+          <Stack direction='row' justifyContent='space-around' width='100%' p={1}>
+          <Button variant="contained" sx={SaveDataBtns} color='error' onClick={()=>Erase()}>Clear All</Button>
+          <Button variant="contained" sx={SaveDataBtns} onClick={()=>Add()} disabled={btn}>Add</Button>
+          <Button variant="contained" sx={SaveDataBtns} onClick={()=>ShowSavedValues()}>Show All</Button>
+          </Stack>
         </Stack>
         {/* Saved Data */}
         <Stack
         border='2px solid #00ffad'
         width='100%'
-        height='85%'
+        height='80%'
         sx={{overflowY:'auto'}}
         p={2}
         >
@@ -132,5 +144,7 @@ color:'white'
         </Stack>
       </Box>
     </Box>
+    <MiniNav />
+    </>
   )
 }

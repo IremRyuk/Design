@@ -1,8 +1,9 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import {useState,useEffect} from 'react'
 import { ConvertInput, ConvertResult, ConvertTitle } from "../Styles/Mui/Mui";
-import '../Styles/Convert/convert.css'
 import $ from 'jquery'
+import Nav from "../Components/Nav";
+import MiniNav from "../Components/MiniNav";
 interface Obj<T> {
   lbs:T,
   inches:T,
@@ -20,9 +21,9 @@ export default function Converting() {
     cm:0
   })
   useEffect(()=>{
-    convert.lbs>=9999?$('.maxLbs').css({border:"4px solid red",borderRadius:'4px'}):$('.maxLbs').css({border:"4px solid transparent"})
-    convert.ft>=9999?$('.maxFt').css({border:"4px solid red",borderRadius:'4px'}):$('.maxFt').css({border:"4px solid transparent"})
-    convert.inches>=9999?$('.maxInches').css({border:"4px solid red",borderRadius:'4px'}):$('.maxInches').css({border:"4px solid transparent"})
+    convert.lbs>=999?$('.maxLbs').css({border:"4px solid red",borderRadius:'4px'}):$('.maxLbs').css({border:"4px solid transparent"})
+    convert.ft>=999?$('.maxFt').css({border:"4px solid red",borderRadius:'4px'}):$('.maxFt').css({border:"4px solid transparent"})
+    convert.inches>=999?$('.maxInches').css({border:"4px solid red",borderRadius:'4px'}):$('.maxInches').css({border:"4px solid transparent"})
   })
   const handleChangePound = (e:React.ChangeEvent<HTMLInputElement>) => {
     if(parseInt(convert.lbs)>=9999){
@@ -43,19 +44,26 @@ export default function Converting() {
      }
       }
   const handleChangeFoot = (e:React.ChangeEvent<HTMLInputElement>) => {
+    if(parseInt(convert.ft)>=9999){
+      return
+     }
+     else{
         setConvert({...convert,ft:e.target.value})
         setResult({...result,mt:parseInt(e.target.value) * 0.3048})
+     }
           }
   return (
     <>
+        <Nav />
     <Box
+    width='100vw'
+    height='100vh'
     display='flex'
     flexDirection='column'
     justifyContent='center'
     alignItems='center'
-    className='convert'
     >
-      <center><Typography sx={{fontSize:{xs:'x-large',md:'xx-large'},marginTop:"100px",fontWeight:'bold'}}>Units Of Measure - American into Europian</Typography></center>
+      <center><Typography sx={{fontSize:{xs:'x-large',md:'xx-large'},fontWeight:'bold'}}>Units Of Measure - American into Europian</Typography></center>
       <Stack 
       direction='column' 
       spacing={{xs:1,md:5}} 
@@ -94,7 +102,7 @@ sx={ConvertInput}
 className='maxLbs'
 />
 <Typography variant="h4">Is</Typography>
-<Typography sx={ConvertResult}>{result.kg.toFixed(2)}</Typography>
+<Typography sx={ConvertResult}>{result.kg.toFixed(1)}</Typography>
 </Stack>
 </Stack>
 
@@ -120,7 +128,7 @@ sx={ConvertInput}
 className='maxInches'
 />
 <Typography variant="h4">Is</Typography>
-<Typography sx={ConvertResult}>{result.cm.toFixed(2)}</Typography>
+<Typography sx={ConvertResult}>{result.cm.toFixed(1)}</Typography>
 </Stack>
 </Stack>
 
@@ -146,11 +154,12 @@ sx={ConvertInput}
 className='maxFt'
 />
 <Typography variant="h4">Is</Typography>
-<Typography sx={ConvertResult}>{result.mt.toFixed(2)}</Typography>
+<Typography sx={ConvertResult}>{result.mt.toFixed(1)}</Typography>
 </Stack>
 </Stack>
       </Stack>
     </Box>
+    <MiniNav />
     </>
   )
 }

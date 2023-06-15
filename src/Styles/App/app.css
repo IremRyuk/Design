@@ -12,15 +12,9 @@ input::-webkit-inner-spin-button {
 
 .App {
   width: 100vw;
-  height: auto;
   background-image: url("../../Images/background.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: #00ffad;
-  cursor: default;
-}
-.App:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
 }/*# sourceMappingURL=app.css.map */
