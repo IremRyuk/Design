@@ -5,8 +5,14 @@ import Typography from "@mui/material/Typography";
 import {useState,useEffect} from 'react'
 import Nav from "../Components/Nav";
 import MiniNav from "../Components/MiniNav";
+import AlertForSaveData from "../Components/AlertForSaveData";
+import { useDispatch } from 'react-redux';
+import { AlertsAct, AlertsActEmpty } from "../Redux/Action/Alert/AlertsAct";
+import AlertForSaveDataEmpty from "../Components/AlertForSaveDataEmpty";
 
 export default function SaveData() {
+  // Redux
+  const dispatch = useDispatch()
     // useState
   const [arr,setArr] = useState<{}[]>([])
   const [saveText,setSaveText] = useState<string>('')
@@ -30,16 +36,14 @@ useEffect(()=>{
   }
 },[arr])
 
+
   // Add
   const Add = () => {
     if(saveText === ''){
       return
     }
     else if(arr.some((res:any)=>res.title == saveText)){
-      // 
-      // Change This Into Mui Alert Error
-      // 
-     alert('already Inside ')
+      dispatch(AlertsAct())
      return
     }
     else{
@@ -47,6 +51,7 @@ useEffect(()=>{
       setArr([obj,...arr])
       // Clear SaveText Input Value
       setSaveText('')
+      // Focus On TextField
     }
   }
 
@@ -60,10 +65,7 @@ useEffect(()=>{
   const ShowSavedValues = () => {
     const getData:string|null = localStorage.getItem('saveData')
     if(getData==null){
-      // 
-      // Change This Into Mui Alert Error
-      // 
-      alert('there is no value')
+      dispatch(AlertsActEmpty())
       return
     }else{
       let obj2 = JSON.parse(getData!)
@@ -74,6 +76,7 @@ const Erase = () => {
   localStorage.clear()
   setArr([])
 }
+
   return (
     <>
     <Nav />
@@ -108,6 +111,7 @@ const Erase = () => {
           value={saveText}
           placeholder="type..."
           onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setSaveText(e.target.value)}
+          onKeyDown={(e)=>{if(e.key === 'Enter'){Add()}}}
           variant="standard"
           sx={SaveDataInput}
           inputProps={{
@@ -145,6 +149,9 @@ color:'white'
       </Box>
     </Box>
     <MiniNav />
+    <AlertForSaveData />
+    <AlertForSaveDataEmpty />
     </>
   )
 }
+

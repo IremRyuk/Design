@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import { WindowSize } from "./Reducer/Navigation/WindowSize";
-import { SwiperValue } from "./Reducer/SwiperInitialValue/SwiperValue";
+import { AlertsRed, AlertsRedEmpty } from "./Reducer/Alerts/AlertsRed";
 
 export const AllReducer = combineReducers({
     windowWidth:WindowSize,
-    changeValue:SwiperValue
+    changeValue:AlertsRed,
+    changeValueEmpty:AlertsRedEmpty
 })

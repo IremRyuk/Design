@@ -123,7 +123,7 @@ export const CanvasMini = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 }
 export const PaintFunctionsMini = {
     marginTop: '10px',

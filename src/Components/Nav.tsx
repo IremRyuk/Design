@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux/es/exports";
 import { WindowSizeAct } from "../Redux/Action/Navigation/WindowSizeAct";
-// import { Menu } from "@mui/icons-material";
-import { SwiperValueAct } from "../Redux/Action/SwiperValueAct/SwiperValueAct";
 import { Link } from "react-router-dom";
 
 export default function Nav() {
@@ -32,7 +30,7 @@ margin:'0px'
         <Toolbar>
             <Stack direction='row' width='100vw' alignItems='center'>
                 <Typography sx={{flexGrow:'1'}}>
-                    <Link to='/'><Button sx={{fontSize:'xx-large',color:'#00ffad'}} onClick={()=>dispatch(SwiperValueAct(1))}>ToolLand</Button></Link>
+                    <Link to='/'><Button sx={{fontSize:'xx-large',color:'#00ffad'}}>ToolLand</Button></Link>
                 </Typography>
                 <Stack direction='row' spacing={5}>
                     <Link to='/paint' style={{textDecoration:'none'}}><Typography sx={{fontSize:'x-large',cursor:'pointer',color:'#00ffad'}}>Paint</Typography></Link>
