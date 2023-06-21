@@ -139,7 +139,7 @@ className='maxInches'
 
 {/* Foot */}
 <Stack direction='column' textAlign='center' mt={1}>
-          <Typography sx={ConvertTitle}>Foot Into Meters</Typography>
+          <Typography sx={ConvertTitle}>Feet Into Meters</Typography>
 <Stack direction='row'alignItems='center' justifyContent='space-evenly' mt={1}>
 <TextField
 value={convert.ft}
