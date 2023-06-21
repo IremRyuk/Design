@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 import Nav from "../Components/Nav";
 import MiniNav from "../Components/MiniNav";
 export default function Paint() {
+  // Set Title
+  document.title = 'ToolLand - Paint'
   // Redux
   let screenSize = useSelector((state:any)=>state.windowWidth)
   

@@ -12,7 +12,7 @@ export default function MiniNav() {
         <Box display={{xs:'flex',sm:'none',padding:'0px',margin:'0px',boxSizing:'border-box'}}>
         <center><Typography variant='h4' sx={{width:'100%',position:'absolute',top:2,}} onClick={()=>navigate('/')}>ToolLand</Typography></center>
         <BottomNavigation
-        showLabels={true}
+        showLabels={false}
         sx={{
             width:'100%',
             position:'fixed',
@@ -24,10 +24,10 @@ export default function MiniNav() {
             onChange={(_event, newValue) => {
                 setValue(newValue);
             }}>
-            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate("/internetTest")} icon={<SpeedIcon />}/>
-            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate("/convert")} icon={<ScaleIcon />}/>
-            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate('/paint')} icon={<ColorLensIcon />}/>
-            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate('/savedata')} icon={<FormatListNumberedRtlIcon />} />
+            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate("/internetTest")} icon={<SpeedIcon sx={{color:'#00ffad'}}/>}/>
+            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate("/convert")} icon={<ScaleIcon sx={{color:'#00ffad'}}/>}/>
+            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate('/paint')} icon={<ColorLensIcon sx={{color:'#00ffad'}}/>}/>
+            <BottomNavigationAction disableTouchRipple style={{scale:'1.2'}} value={value} onClick={()=>navigate('/savedata')} icon={<FormatListNumberedRtlIcon sx={{color:'#00ffad'}}/>} />
         </BottomNavigation>
         </Box>
     )

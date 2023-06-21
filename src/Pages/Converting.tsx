@@ -10,6 +10,10 @@ interface Obj<T> {
   ft:T
 }
 export default function Converting() {
+      // Set Title
+    document.title = 'ToolLand - Converting'
+
+    // useState
   const [convert,setConvert] = useState<Obj<any>>({
     lbs:'0',
     ft:'0',
@@ -21,6 +25,7 @@ export default function Converting() {
     cm:0
   })
   useEffect(()=>{
+    // Convert
     convert.lbs>=999?$('.maxLbs').css({border:"4px solid red",borderRadius:'4px'}):$('.maxLbs').css({border:"4px solid transparent"})
     convert.ft>=999?$('.maxFt').css({border:"4px solid red",borderRadius:'4px'}):$('.maxFt').css({border:"4px solid transparent"})
     convert.inches>=999?$('.maxInches').css({border:"4px solid red",borderRadius:'4px'}):$('.maxInches').css({border:"4px solid transparent"})

@@ -11,6 +11,8 @@ import { AlertsAct, AlertsActEmpty } from "../Redux/Action/Alert/AlertsAct";
 import AlertForSaveDataEmpty from "../Components/AlertForSaveDataEmpty";
 
 export default function SaveData() {
+  // Set Title
+  document.title = 'ToolLand - SaveData'
   // Redux
   const dispatch = useDispatch()
     // useState

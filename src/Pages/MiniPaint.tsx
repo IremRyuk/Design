@@ -4,6 +4,9 @@ import { CanvasMini, PaintBtnsDrawerMini, PaintFunctions } from "../Styles/Mui/M
 import {createRef,useState} from 'react'
 import '../Styles/Paint/paint.css'
 export default function MiniPaint() {
+        // Set Title
+        document.title = 'ToolLand - Paint'
+        //   useState
         let mod = createRef<ReactSketchCanvasRef>()
         let [color,setColor] = useState<string>('black')
         let [bgColor,setBGColor] = useState<string>('white')

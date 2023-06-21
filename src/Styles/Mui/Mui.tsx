@@ -24,45 +24,37 @@ export const CatergoriesBtns = {
     }
 }
 
-export const HomeModal = {
-    padding: {
-        sm: '32px',
-        md: '80px'
+export const BottomStyle ={
+    position: 'absolute',
+    bottom:'5%',
+    width:'100vw',
+    flexDirection:{xs:'column',md:'row'},
+    justifyContent:{xs:'center',md:'space-around'},
+    gap:'10px',
+    alignItems:'center'
+}
+export const HomeTime_Links = {
+    width: 'fit-content',
+    fontSize: {
+        xs: 'x-large',
+        sm: 'xx-large'
     },
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '70vw',
-    height: 'fit-content',
-    bgcolor: 'black',
-    borderRadius: '2.4mm',
-    textAlign: 'center',
-    color: '#00ffad',
-    '&:focus-visible': {
-        outline: 'none'
-    }
 }
-export const HomeModalFonts = {
+export const HomeLinks = {
+    width: 'fit-content',
     fontSize: {
-        sm: 'x-large',
-        md: 'xx-large'
+        xs: 'x-large',
+        sm: 'xx-large'
     }
 }
-export const HomeTime = {
-    position: 'absolute',
-    bottom: '10%',
-    left: '5%',
-    fontSize: {
-        sm: 'x-large',
-        md: 'xx-large'
-    }
+export const HomeLinksStyle = {
+    scale: '2',
+    color: "#00ffd3",
+    '&:hover': {
+        scale: '2.3'
+    },
+    transition: '0.2s'
 }
-
 // Convert
 export const ConvertInput = {
     width: '40%',
@@ -123,7 +115,7 @@ export const CanvasMini = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
 }
 export const PaintFunctionsMini = {
     marginTop: '10px',

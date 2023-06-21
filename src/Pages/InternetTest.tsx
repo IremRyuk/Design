@@ -3,6 +3,9 @@ import {useState} from 'react'
 import Nav from "../Components/Nav";
 import MiniNav from "../Components/MiniNav";
 export default function InternetTest() {
+  // Set Title
+  document.title = 'ToolLand - Internet Test'
+  // useState
   const [speedTest,setSpeed] = useState<number|string>(0)
   const [country,setCountry] = useState<string>('Find Country')
   const [city,setCity] = useState<string>('Find City')
@@ -11,7 +14,7 @@ export default function InternetTest() {
   "?n=" +
   Math.random();
 let startTime: number, endTime: number;
-let downloadSize:number = 5244392; //5.24Mb
+let downloadSize:number = 4244792; //4.24Mb
 let download = new Image();
 let roundedDecimals:number = 2;
 let bytesInAKilobyte:number = 1024;
