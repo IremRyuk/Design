@@ -9,7 +9,7 @@ export default function MiniNav() {
     const navigate = useNavigate()
     const [value, setValue] = useState<number>(0);
     return (
-        <Box display={{xs:'flex',sm:'none',padding:'0px',margin:'0px',boxSizing:'border-box'}}>
+        <Box display={{xs:'flex',md:'none',padding:'0px',margin:'0px',boxSizing:'border-box'}}>
         <center><Typography variant='h4' sx={{width:'100%',position:'absolute',top:2,}} onClick={()=>navigate('/')}>ToolLand</Typography></center>
         <BottomNavigation
         showLabels={false}

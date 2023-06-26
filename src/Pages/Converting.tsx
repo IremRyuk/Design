@@ -45,7 +45,7 @@ export default function Converting() {
      }
      else{
     setConvert({...convert,inches:e.target.value})
-    setResult({...result,cm:parseInt(e.target.value) * 0.393701})
+    setResult({...result,cm:parseInt(e.target.value) * 2.54})
      }
       }
   const handleChangeFoot = (e:React.ChangeEvent<HTMLInputElement>) => {

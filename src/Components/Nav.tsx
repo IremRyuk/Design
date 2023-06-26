@@ -20,7 +20,7 @@ export default function Nav() {
     <AppBar
     className="navigation"
     sx={{
-        display:{xs:'none',sm:'flex'},
+        display:{xs:'none',md:'flex'},
 bgcolor:'transparent',
 boxShadow:'none',
 padding:'0px',
