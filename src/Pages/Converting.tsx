@@ -68,7 +68,6 @@ export default function Converting() {
     justifyContent='center'
     alignItems='center'
     >
-      <center><Typography sx={{fontSize:{xs:'x-large',md:'xx-large'},fontWeight:'bold'}}>Units Of Measure - American into Europian</Typography></center>
       <Stack 
       direction='column' 
       spacing={{xs:1,md:5}} 
